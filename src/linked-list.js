@@ -26,7 +26,7 @@ class LinkedList {
      *
      * @param {*} value - The value to append.
      */
-    appendValue(value) {
+    append(value) {
         const newNode = new Node(value);
 
         // If empty list, add node as head and tail
@@ -181,7 +181,7 @@ class LinkedList {
         let string = '';
 
         while (current) {
-            string += `(${current.value.toString()}) -> `;
+            string += `( ${current.value.toString()} ) -> `;
             current = current.next;
         }
 
