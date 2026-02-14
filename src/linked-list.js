@@ -140,7 +140,7 @@ class LinkedList {
     /**
      * Returns true if the passed in value is in the list, otherwise returns false.
      *
-     * @returns {boolean} If the value is found.
+     * @returns {boolean} Whether the value is contained or not.
      */
     contains(value) {
         let current = this.head;
@@ -150,5 +150,24 @@ class LinkedList {
             current = current.next;
         }
         return false;
+    }
+
+    /**
+     * Returns the index of the node containing the given value. If the value can’t be found, returns -1.
+     * If more than one node have matching values, the first-found node's index is returned.
+     *
+     * @param {*} value - The value to search the index of.
+     * @returns {number} The index at which the value was found.
+     */
+    findIndex(value) {
+        let current = this.head;
+        let i = 0;
+
+        while (current) {
+            if (current.value === value) return i;
+            current = current.next;
+            i++;
+        }
+        return -1;
     }
 }
