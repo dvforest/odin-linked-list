@@ -74,4 +74,18 @@ class LinkedList {
 
         return count;
     }
+
+    /**
+     * @returns {*} The value of the first node in the list. It empty, returns undefined.
+     */
+    head() {
+        return this.head ? this.head.value : undefined;
+    }
+
+    /**
+     * @returns {*} The value of the final node in the list. It empty, returns undefined.
+     */
+    tail() {
+        return this.tail ? this.tail.value : undefined;
+    }
 }
