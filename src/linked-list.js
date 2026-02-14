@@ -82,7 +82,7 @@ class LinkedList {
     /**
      * Returns the value of the first node in the list
      *
-     * @returns {*} The value of the head node, or undefined if the list is empty.
+     * @returns {*} The value of the head node, or undefined if it doesn't exist.
      */
     head() {
         return this.head ? this.head.value : undefined;
@@ -91,7 +91,7 @@ class LinkedList {
     /**
      * Returns the value of the final node in the list
      *
-     * @returns {*} The value of the tail node, or undefined if the list is empty.
+     * @returns {*} The value of the tail node, or undefined if it doesn't exist.
      */
     tail() {
         return this.tail ? this.tail.value : undefined;
@@ -101,7 +101,20 @@ class LinkedList {
      * Returns the value of the node at the given index.
      *
      * @param {*} index - The index of the node to retrieve.
-     * @returns {*} The value of the node, or undefined if node doesn't exist.
+     * @returns {*} The value of the node, or undefined if it doesn't exist.
      */
-    at(index) {}
+    at(index) {
+        // Handle negative index.
+        if (index < 0) return undefined;
+
+        let current = this.head;
+        let i = 0;
+
+        // Iterate until the index is reached.
+        while (current && i < index) {
+            current = current.next;
+            i++;
+        }
+        return current ? current.value : undefined;
+    }
 }
