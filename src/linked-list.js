@@ -23,6 +23,7 @@ class LinkedList {
 
     /**
      * Adds a value to the end of the list.
+     *
      * @param {*} value - The value to append.
      */
     appendValue(value) {
@@ -42,6 +43,7 @@ class LinkedList {
 
     /**
      * Adds a value to the beginning of the list.
+     *
      * @param {*} value - The value to append.
      */
     prepend(value) {
@@ -61,7 +63,9 @@ class LinkedList {
     }
 
     /**
-     * @returns {number} The total number of nodes in the list.
+     * Returns the total number of number of nodes in the list
+     *
+     * @returns {number} The total number of nodes.
      */
     size() {
         let count = 0;
@@ -76,16 +80,28 @@ class LinkedList {
     }
 
     /**
-     * @returns {*} The value of the first node in the list. It empty, returns undefined.
+     * Returns the value of the first node in the list
+     *
+     * @returns {*} The value of the head node, or undefined if the list is empty.
      */
     head() {
         return this.head ? this.head.value : undefined;
     }
 
     /**
-     * @returns {*} The value of the final node in the list. It empty, returns undefined.
+     * Returns the value of the final node in the list
+     *
+     * @returns {*} The value of the tail node, or undefined if the list is empty.
      */
     tail() {
         return this.tail ? this.tail.value : undefined;
     }
+
+    /**
+     * Returns the value of the node at the given index.
+     *
+     * @param {*} index - The index of the node to retrieve.
+     * @returns {*} The value of the node, or undefined if node doesn't exist.
+     */
+    at(index) {}
 }
