@@ -117,4 +117,25 @@ class LinkedList {
         }
         return current ? current.value : undefined;
     }
+
+    /**
+     * Removes the head node from the list and returns its value.
+     *
+     * @returns {*} The value of the removed head node.
+     */
+    pop() {
+        // Handle empty list
+        if (!this.head) return undefined;
+
+        // Save current value and update head node
+        const value = this.head.value;
+        this.head = this.head.next;
+
+        // Handle empty list after popping a single node;
+        if (!this.head) {
+            this.tail = null;
+        }
+
+        return value;
+    }
 }
