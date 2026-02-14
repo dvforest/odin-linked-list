@@ -61,7 +61,7 @@ class LinkedList {
     }
 
     /**
-     * Returns the total number of nodes in the list.
+     * @returns {number} The total number of nodes in the list.
      */
     size() {
         let count = 0;
