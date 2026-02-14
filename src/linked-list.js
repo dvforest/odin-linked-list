@@ -1,16 +1,30 @@
+/**
+ * Represents a single node in a singly linked list.
+ */
 class Node {
+    /**
+     * Creates a new node.
+     * @param {*} value - The value stored in the node.
+     */
     constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
 
+/**
+ * A singly linked list implementation.
+ */
 class LinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
     }
 
+    /**
+     * Adds a value to the end of the list.
+     * @param {*} value - The value to append.
+     */
     appendValue(value) {
         const newNode = new Node(value);
 
@@ -26,6 +40,10 @@ class LinkedList {
         this.tail = newNode;
     }
 
+    /**
+     * Adds a value to the beginning of the list.
+     * @param {*} value - The value to append.
+     */
     prepend(value) {
         const newNode = new Node(value);
 
@@ -40,5 +58,20 @@ class LinkedList {
         if (!this.tail) {
             this.tail = newNode;
         }
+    }
+
+    /**
+     * Returns the total number of nodes in the list.
+     */
+    size() {
+        let count = 0;
+        let current = this.head;
+
+        while (current) {
+            count++;
+            current = current.next;
+        }
+
+        return count;
     }
 }
