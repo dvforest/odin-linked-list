@@ -110,7 +110,6 @@ class LinkedList {
         let current = this.head;
         let i = 0;
 
-        // Iterate until the index is reached.
         while (current && i < index) {
             current = current.next;
             i++;
@@ -127,7 +126,6 @@ class LinkedList {
         // Handle empty list
         if (!this.head) return undefined;
 
-        // Save current value and update head node
         const value = this.head.value;
         this.head = this.head.next;
 
@@ -137,5 +135,20 @@ class LinkedList {
         }
 
         return value;
+    }
+
+    /**
+     * Returns true if the passed in value is in the list, otherwise returns false.
+     *
+     * @returns {boolean} If the value is found.
+     */
+    contains(value) {
+        let current = this.head;
+
+        while (current) {
+            if (current.value === value) return true;
+            current = current.next;
+        }
+        return false;
     }
 }
