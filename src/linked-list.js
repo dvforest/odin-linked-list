@@ -170,4 +170,33 @@ class LinkedList {
         }
         return -1;
     }
+
+    /**
+     * Returns the linked list as a string to preview in the console.
+     *
+     * @returns {string} A string in the format (value) -> (value) -> (null)
+     */
+    toString() {
+        let current = this.head;
+        let string = '';
+
+        while (current) {
+            string += `(${current.value.toString()}) -> `;
+            current = current.next;
+        }
+
+        return string + '(null)';
+    }
 }
+
+// Testing the code
+const list = new LinkedList();
+
+list.append('dog');
+list.append('cat');
+list.append('parrot');
+list.append('hamster');
+list.append('snake');
+list.append('turtle');
+
+console.log(list.toString());
